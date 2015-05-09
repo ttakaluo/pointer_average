@@ -28,7 +28,25 @@ int main(void){
 	int *numbers = (int *) malloc(i * sizeof(int));
 	//printf("Input the numbers: ");
 	
-	printf("\n%d\n", i);
+	printf("\nYou requested average of %d numbers.\n", i);
+
+
+	int j = 0;
+	int sum = 0;
+
+	for(j=0; j < i; j++){
+		printf("\nGive the number %2.2d: ", j+1);
+		numbers[j]=askNumber();
+		sum += numbers[j];
+		}
+
+	printf("You have inputted following numbers: \n");
+
+	for(j=0; j < i; j++){
+		printf("%d ", numbers[j]);
+	}
+	printf("\nSum of the numbers is: %d and the average is: %d \n", sum, sum/i);
+
 	free(numbers);
 	
 	return 0;
